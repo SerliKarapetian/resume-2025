@@ -9,11 +9,11 @@
       <div class="relative group">
         <!-- Polaroid Frame -->
         <div
-          class="bg-white p-6 pb-10 rounded-xl shadow-2xl border-8 border-sky-200 rotate-[-2deg] transition-all duration-500 group-hover:rotate-0 group-hover:scale-105"
+          class="bg-white p-4 pb-10 rounded-lg shadow-2xl border-2 border-sky-200 rotate-[-2deg] transition-all duration-500 group-hover:rotate-0 group-hover:scale-105"
         >
           <!-- Photo Area -->
           <div
-            class="w-64 h-64 bg-gradient-to-br from-sky-400 to-sky-600 rounded flex items-center justify-center border-4 border-sky-300 shadow-lg"
+            class="w-72 h-72 bg-gradient-to-br from-sky-400 to-sky-600 rounded flex items-center justify-center border-2 border-sky-300 shadow-lg"
           >
             <div class="text-center text-sky-900">
               <p class="text-lg font-semibold">Photo placeholder</p>
@@ -22,14 +22,54 @@
 
           <!-- Name and Title -->
           <div class="mt-4 text-center space-y-2">
-            <h1 class="text-3xl font-bold text-sky-900">Serli Gharapetian</h1>
-            <div class="h-0.5 w-16 bg-sky-500 mx-auto"></div>
-            <p class="text-lg text-sky-700 font-medium">
-              Front-End Developer
-            </p>
+            <h1 class="text-2xl font-bold text-sky-900">Serli Gharapetian</h1>
+            <p class="text-md text-sky-700 font-medium">Front-End Developer</p>
           </div>
-
         </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex flex-col gap-6">
+        <NuxtLink
+          to="/resume"
+          class="group relative bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-sky-600 transition-colors duration-300 text-lg flex items-center justify-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
+            />
+          </svg>
+          <span>View Resume</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/resume"
+          class="group relative bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-sky-600 transition-colors duration-300 text-lg flex items-center justify-center gap-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14.25 9.75 16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0 0 20.25 18V6A2.25 2.25 0 0 0 18 3.75H6A2.25 2.25 0 0 0 3.75 6v12A2.25 2.25 0 0 0 6 20.25Z"
+            />
+          </svg>
+          <span>View Projects</span>
+        </NuxtLink>
       </div>
     </div>
   </div>
