@@ -17,6 +17,7 @@
           >
             <div class="text-center text-sky-900">
               <p class="text-lg font-semibold">Photo placeholder</p>
+              <!-- <img src="/assets/images/pic.JPG" alt=""> -->
             </div>
           </div>
 
@@ -32,7 +33,7 @@
       <div class="flex flex-col gap-6">
         <NuxtLink
           to="/resume"
-          class="group relative bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-sky-600 transition-colors duration-300 text-lg flex items-center justify-center gap-3"
+          class="group bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-gradient-to-r hover:from-sky-600 hover:to-blue-600 hover:translate-x-1 transition-all duration-300 text-lg flex items-center justify-center gap-3 focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,8 +52,8 @@
           <span>View Resume</span>
         </NuxtLink>
         <NuxtLink
-          to="/resume"
-          class="group relative bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-sky-600 transition-colors duration-300 text-lg flex items-center justify-center gap-3"
+          to="/projects"
+          class="group bg-sky-500 text-white font-semibold py-4 px-8 rounded-lg shadow-lg hover:bg-sky-600 hover:shadow-[0_0_20px_5px_rgba(56,189,248,0.4)] transition-all duration-300 text-lg flex items-center justify-center gap-3 focus:outline-none"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +61,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="size-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300"
           >
             <path
               stroke-linecap="round"
