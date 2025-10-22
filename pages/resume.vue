@@ -1,13 +1,13 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-100 p-6 lg:p-10 font-[Inter,sans-serif]"
+    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-800 p-6 lg:p-10 font-[Georgia,serif]"
   >
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-4xl mx-auto border-2 border-gray-200 rounded-lg p-6 bg-white shadow-lg">
       <!-- Header -->
-      <header class="text-left mb-12 animate-fade-in">
+      <header class="text-left mb-12">
         <div class="flex items-center gap-4 mb-4">
           <div
-            class="w-16 h-16 bg-sky-500 rounded-full flex items-center justify-center shadow-lg animate-pulse-slow"
+            class="w-16 h-16 bg-sky-500 rounded-full flex items-center justify-center"
           >
             <svg
               class="w-8 h-8 text-white"
@@ -22,14 +22,14 @@
             </svg>
           </div>
           <div>
-            <h1 class="text-4xl font-bold text-sky-100 tracking-tight shadow-sm">
+            <h1 class="text-4xl font-semibold text-gray-900 tracking-tight">
               Jane Doe
             </h1>
-            <p class="text-xl text-sky-300 font-medium">Junior Front-End Developer | Aspiring UI/UX Designer</p>
+            <p class="text-xl text-gray-600 font-medium">Junior Front-End Developer | Aspiring UI/UX Designer</p>
           </div>
         </div>
         <div
-          class="flex flex-wrap gap-3 mt-4 text-sm text-sky-200"
+          class="flex flex-wrap gap-3 mt-4 text-sm text-gray-600"
         >
           <span>📧 jane.doe@email.com</span>
           <span>📱 +00 000 000 000</span>
@@ -52,12 +52,12 @@
       <!-- About Me -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           About Me
         </h2>
         <p
-          class="text-sky-200 leading-loose text-base"
+          class="text-gray-700 leading-relaxed text-base"
         >
           I’m a creative problem-solver who believes good design should serve people. I enjoy collaborating with others to develop ideas and crafting thoughtful solutions that make everyday tasks simpler and more enjoyable. With patience, curiosity, and attention to detail, I’m focused on deepening my understanding of UI/UX design and creating user experiences that are both practical and visually engaging.
         </p>
@@ -66,20 +66,20 @@
       <!-- Experience -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           Experience
         </h2>
         <div class="space-y-8">
           <div
-            class="p-4 bg-sky-900/20 rounded-lg shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300"
+            class="p-4 bg-gray-50 rounded-lg shadow-sm"
           >
-            <h3 class="text-xl font-medium text-sky-100">
+            <h3 class="text-xl font-medium text-gray-900">
               Front-End Developer & Documentation Assistant
             </h3>
-            <p class="text-sky-300">XYZ Company | Aug 2024 – Oct 2025</p>
+            <p class="text-gray-600">XYZ Company | Aug 2024 – Oct 2025</p>
             <ul
-              class="list-disc list-inside text-sky-200 mt-2 space-y-2"
+              class="list-disc list-inside text-gray-700 mt-2 space-y-2"
             >
               <li>Developed a strong understanding of documentation’s role in the software development lifecycle.</li>
               <li>Collaborated with cross-functional teams to meet goals efficiently and on time.</li>
@@ -92,14 +92,14 @@
             </ul>
           </div>
           <div
-            class="p-4 bg-sky-900/20 rounded-lg shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300"
+            class="p-4 bg-gray-50 rounded-lg shadow-sm"
           >
-            <h3 class="text-xl font-medium text-sky-100">
+            <h3 class="text-xl font-medium text-gray-900">
               English Teacher
             </h3>
-            <p class="text-sky-300">XYZ Language Center | 2022 – Present (intermittent)</p>
+            <p class="text-gray-600">XYZ Language Center | 2022 – Present (intermittent)</p>
             <ul
-              class="list-disc list-inside text-sky-200 mt-2 space-y-2"
+              class="list-disc list-inside text-gray-700 mt-2 space-y-2"
             >
               <li>Adapted teaching methods for diverse ages and learning styles.</li>
               <li>Enhanced communication skills with diverse learners.</li>
@@ -113,46 +113,95 @@
       <!-- Education -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           Education
         </h2>
         <div>
-          <h3 class="text-xl font-medium text-sky-100">
+          <h3 class="text-xl font-medium text-gray-900">
             Bachelor’s Degree in Computer Engineering
           </h3>
-          <p class="text-sky-300">XYZ University</p>
-          <p class="text-sky-200 mt-1">Math and Physics Diploma</p>
+          <p class="text-gray-600">XYZ University | 2018 – 2022</p>
+          <p class="text-gray-700 mt-1">Math and Physics Diploma</p>
+          <p class="text-gray-600 mt-1">High School | 2014 – 2018</p>
         </div>
       </section>
 
       <!-- Skills & UI/UX Aspirations -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           Skills & UI/UX Aspirations
         </h2>
-        <div
-          class="grid grid-cols-2 lg:grid-cols-4 gap-3 text-sky-200 text-sm"
-        >
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">HTML</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">CSS</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">JavaScript</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Nuxt.js</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Vuetify</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Tailwind CSS</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">UI/UX Design (learning)</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Git (basic)</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Responsive Design (basic)</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Teamwork</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Creativity</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Problem-Solving</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Adaptability</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Willingness to Learn</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Time Management</span>
+        <div class="flex flex-col lg:flex-row gap-6">
+          <!-- Hard Skills -->
+          <div class="w-full lg:w-1/2">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Technical Skills</h3>
+            <div class="space-y-3">
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span class="text-gray-700">HTML</span>
+                  <span class="text-gray-900 font-medium">50%</span>
+                </div>
+                <div class="progress-bar h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <div class="progress-fill h-full bg-gradient-to-r from-sky-600 to-sky-700" style="width: 50%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span class="text-gray-700">CSS & Tailwind CSS</span>
+                  <span class="text-gray-900 font-medium">50%</span>
+                </div>
+                <div class="progress-bar h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <div class="progress-fill h-full bg-gradient-to-r from-sky-600 to-sky-700" style="width: 50%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span class="text-gray-700">JavaScript & Nuxt.js</span>
+                  <span class="text-gray-900 font-medium">40%</span>
+                </div>
+                <div class="progress-bar h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <div class="progress-fill h-full bg-gradient-to-r from-sky-600 to-sky-700" style="width: 40%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span class="text-gray-700">Vuetify</span>
+                  <span class="text-gray-900 font-medium">30%</span>
+                </div>
+                <div class="progress-bar h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <div class="progress-fill h-full bg-gradient-to-r from-sky-600 to-sky-700" style="width: 30%;"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1 text-sm">
+                  <span class="text-gray-700">UI/UX Design (Learning)</span>
+                  <span class="text-gray-900 font-medium">20%</span>
+                </div>
+                <div class="progress-bar h-2 bg-gray-300 rounded-full overflow-hidden">
+                  <div class="progress-fill h-full bg-gradient-to-r from-sky-600 to-sky-700" style="width: 20%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Soft Skills -->
+          <div class="w-full lg:w-1/2">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Soft Skills</h3>
+            <div class="grid grid-cols-2 gap-2">
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Teamwork</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Creativity</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Problem-solving</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Adaptability</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Willingness to Learn</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm">Time Management</span>
+              <span class="px-2 py-1 bg-sky-200 text-sky-800 rounded-lg text-center border border-sky-400 text-sm col-span-2">Multilingual (Armenian, Persian, English)</span>
+            </div>
+          </div>
         </div>
-        <p class="text-sky-200 mt-4 text-sm">
+        <!-- UI/UX Aspirations -->
+        <p class="text-gray-700 mt-4 text-sm">
           Actively exploring UI/UX design tools (e.g., Figma) and principles to complement my front-end skills, with a goal to design intuitive interfaces.
         </p>
       </section>
@@ -160,28 +209,28 @@
       <!-- Projects -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           Projects
         </h2>
         <div class="space-y-6">
           <div
-            class="p-4 bg-sky-900/20 rounded-lg shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300"
+            class="p-4 bg-gray-50 rounded-lg shadow-sm"
           >
-            <h3 class="text-xl font-medium text-sky-100">
+            <h3 class="text-xl font-medium text-gray-900">
               Crochet Management System
             </h3>
-            <p class="text-sky-200">
+            <p class="text-gray-700">
               A web app for crocheters to track inventory, patterns, and projects. Evolved from Nuxt and CSS to Nuxt with Vuetify, now using Tailwind. Includes mindmaps and use case diagrams. Inspired by personal crocheting needs.
             </p>
           </div>
           <div
-            class="p-4 bg-sky-900/20 rounded-lg shadow-md hover:shadow-xl hover:scale-102 transition-all duration-300"
+            class="p-4 bg-gray-50 rounded-lg shadow-sm"
           >
-            <h3 class="text-xl font-medium text-sky-100">
+            <h3 class="text-xl font-medium text-gray-900">
               Mini Front-End Projects
             </h3>
-            <p class="text-sky-200">
+            <p class="text-gray-700">
               Tic Tac Toe, Rock Paper Scissors, To-Do List, and First Portfolio Website. Built with HTML, CSS, and JS to master web fundamentals and responsive design.
             </p>
           </div>
@@ -191,36 +240,26 @@
       <!-- Languages -->
       <section class="mb-10">
         <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
+          class="text-2xl font-semibold text-gray-900 border-b-2 border-gray-300 pb-2 mb-4"
         >
           Languages
         </h2>
         <div
-          class="grid grid-cols-2 lg:grid-cols-3 gap-3 text-sky-200 text-sm"
+          class="grid grid-cols-2 lg:grid-cols-3 gap-3 text-gray-700 text-sm"
         >
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Armenian</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">Persian</span>
-          <span class="px-3 py-1 bg-sky-900/50 rounded-full">English</span>
+          <span class="px-3 py-1 bg-gray-200 rounded-full">Armenian</span>
+          <span class="px-3 py-1 bg-gray-200 rounded-full">Persian</span>
+          <span class="px-3 py-1 bg-gray-200 rounded-full">English</span>
         </div>
-      </section>
-
-      <!-- References -->
-      <section>
-        <h2
-          class="text-2xl font-semibold text-sky-100 border-b border-gradient pb-2 mb-4 relative"
-        >
-          References
-        </h2>
-        <p class="text-sky-200">Available upon request.</p>
       </section>
 
       <!-- Back Button -->
       <div class="mt-10 text-center">
         <NuxtLink
           to="/"
-          class="inline-block bg-sky-400 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-sky-500 hover:shadow-[0_0_15px_5px_rgba(255,255,255,0.5),0_0_25px_10px_rgba(125,211,252,0.3)] transition-all duration-300 focus:outline-none"
+          class="inline-block bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg shadow-md focus:outline-none"
         >
-          Back to Portfolio
+          Back to HomePage
         </NuxtLink>
       </div>
     </div>
@@ -234,65 +273,44 @@ const route = useRoute();
 </script>
 
 <style scoped>
-/* Font import (optional, ensure Inter is available or fallback to system fonts) */
+/* Font import (optional, ensure Georgia is available or fallback to serif) */
 @font-face {
-  font-family: "Inter";
-  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap") format("woff2");
+  font-family: "Georgia";
+  src: local("Georgia"), url("https://fonts.cdnfonts.com/s/17370/Georgia.woff") format("woff");
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.5s ease-in;
+/* Progress Bar Styles */
+.progress-bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #e5e7eb;
+  overflow: hidden;
+  border: 1px solid #d1d5db;
 }
 
-.animate-pulse-slow {
-  animation: pulse 2s infinite ease-in-out;
+.progress-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(to right, #0284c7, #075985);
 }
 
-.border-gradient {
-  position: relative;
-}
-.border-gradient::after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, #93c5fd, transparent);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
+/* Print styles */
 @media print {
-  .bg-gradient-to-br,
-  .animate-fade-in,
-  .animate-pulse-slow,
-  .hover\:shadow-\[.*\],
-  .hover\:scale-\[.*\],
-  .hover\:opacity-\[.*\],
+  .bg-white,
+  .border-2,
+  .shadow-lg,
   .mt-10,
   a {
-    display: none !important;
+    display: block !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
   }
   body {
     background: white !important;
     color: black !important;
   }
-  .max-w-3xl {
+  .max-w-4xl {
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -300,8 +318,12 @@ const route = useRoute();
   h1, h2, h3, p, ul, li {
     color: black !important;
   }
-  .border-gradient {
-    border-bottom: 2px solid #93c5fd !important;
+  .border-b-2 {
+    border-bottom: 2px solid #e5e7eb !important;
+  }
+  .progress-bar,
+  .progress-fill {
+    display: none !important;
   }
 }
 </style>
