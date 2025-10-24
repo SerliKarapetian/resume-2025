@@ -1,13 +1,13 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-800 p-6 lg:p-12 font-[Georgia,serif] relative overflow-hidden"
+    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-blue-800 text-gray-800 p-6 lg:p-12 font-[Georgia,serif] relative overflow-hidden"
   >
     <!-- Vignette Overlay -->
     <div
-      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]"
-        ></div>
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.15)_0%,rgba(0,0,0,0.5)_100%)]"
+    ></div>
     <section class="relative z-10">
-      <div class="container mx-auto px-4 max-w-7xl">
+      <div class="container mx-auto px-4 max-w-screen-xl">
         <!-- Header -->
         <div class="text-center mb-16">
           <h2
@@ -24,7 +24,7 @@
         <!-- Projects Grid -->
         <div
           dir="ltr"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 justify-items-center bg-white/10 backdrop-blur-sm rounded-lg p-6"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 justify-items-center bg-white/10 backdrop-blur-md rounded-lg p-8 shadow-[0_4px_30px_rgba(0,0,0,0.3)]"
         >
           <div
             v-for="(project, index) in projects"
@@ -72,7 +72,10 @@
                 <!-- <h3 class="text-xl font-bold mb-2">
                   {{ project.title }}
                 </h3> -->
-                <p class="text-base mb-4 text-center" v-html="project.description"></p>
+                <p
+                  class="text-base mb-4 text-center"
+                  v-html="project.description"
+                ></p>
                 <!-- <ul class="text-sm space-y-1 mb-4 text-center">
                   <li v-for="feature in project.features" :key="feature.label">
                     <span class="font-semibold">{{ feature.label }}:</span>
@@ -120,8 +123,6 @@ const projects = ref([
     description:
       "A web-based <strong>todo list</strong> application built to practice state management and responsive design, allowing users to create, edit, and delete tasks with ease.",
     category: "Web App",
-    icon: "fas fa-tasks",
-    bgColor: "#0d141e",
     link: "/pages/todolist",
   },
   {
@@ -131,8 +132,6 @@ const projects = ref([
     description:
       "A web-based <strong>Tic Tac Toe</strong> game developed to practice JavaScript logic and CSS animations, featuring a clean interface and responsive design.",
     category: "Game",
-    icon: "fas fa-gamepad",
-    bgColor: "#2e475d",
     link: "/pages/tictactoe",
   },
   {
@@ -142,8 +141,6 @@ const projects = ref([
     description:
       "An <strong>interactive Rock Paper Scissors game</strong> built to enhance JavaScript skills, with animated transitions and a mobile-friendly layout.",
     category: "Game",
-    icon: "fas fa-hand-rock",
-    bgColor: "#2a9044",
     link: "/pages/rockpaperscissors",
   },
   {
@@ -153,8 +150,6 @@ const projects = ref([
     description:
       "A <strong>digital Magic 8-Ball</strong> application created to practice random response generation and playful UI design, with smooth animations.",
     category: "Web App",
-    icon: "fas fa-magic",
-    bgColor: "#34578e",
     link: "/pages/8ball",
   },
   {
@@ -164,8 +159,6 @@ const projects = ref([
     description:
       "A <strong>photo gallery</strong> application showcasing cat images, built to practice API integration and grid layouts with Tailwind CSS.",
     category: "Web App",
-    icon: "fas fa-cat",
-    bgColor: "#ed1c24",
     link: "/pages/catphoto",
   },
   {
@@ -175,8 +168,6 @@ const projects = ref([
     description:
       "A <strong>sticky notes</strong> application designed to practice drag-and-drop functionality and local storage, with a vibrant and intuitive interface.",
     category: "Web App",
-    icon: "fas fa-sticky-note",
-    bgColor: "#e5af38",
     link: "/pages/stickynotes",
   },
   {
@@ -186,8 +177,6 @@ const projects = ref([
     description:
       "A <strong>responsive landing page</strong> for a tattoo shop, built to practice modern web design principles and Tailwind CSS for styling.",
     category: "Website",
-    icon: "fas fa-tattoo-machine",
-    bgColor: "#e75027",
     link: "/pages/tattooshop",
   },
   {
@@ -197,8 +186,6 @@ const projects = ref([
     description:
       "A <strong>quote generator</strong> application that fetches random quotes via an API, designed to practice asynchronous JavaScript and UI design.",
     category: "Web App",
-    icon: "fas fa-quote-left",
-    bgColor: "#9e3494",
     link: "/pages/quotegenerator",
   },
   {
@@ -208,8 +195,6 @@ const projects = ref([
     description:
       "A <strong>Pomodoro timer</strong> application built to practice JavaScript timers and state management, with a clean and distraction-free design.",
     category: "Web App",
-    icon: "fas fa-clock",
-    bgColor: "#219dd7",
     link: "/pages/pomodoro",
   },
   {
@@ -219,8 +204,6 @@ const projects = ref([
     description:
       "A personal <strong>expense tracker</strong> built to practice data visualization and local storage, featuring charts and a user-friendly interface.",
     category: "Web App",
-    icon: "fas fa-wallet",
-    bgColor: "#ffcb2d",
     link: "/pages/expensetracker",
   },
   {
@@ -230,8 +213,6 @@ const projects = ref([
     description:
       "A <strong>music playlist</strong> application designed to practice dynamic list rendering and API integration, with a sleek and modern UI.",
     category: "Web App",
-    icon: "fas fa-music",
-    bgColor: "#000000",
     link: "/pages/musicplaylist",
   },
 ]);
@@ -286,7 +267,7 @@ const projects = ref([
 
 /* .flip-card-back p strong {
   font-weight: 700;
-  color: inherit;
+    color: inherit;
 } */
 
 /* Polaroid animation */
