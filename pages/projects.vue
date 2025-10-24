@@ -1,7 +1,11 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-800 p-6 lg:p-10 font-[Georgia,serif]"
+    class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-800 p-6 lg:p-12 font-[Georgia,serif] relative overflow-hidden"
   >
+    <!-- Vignette Overlay -->
+    <div
+      class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.3)_100%)]"
+        ></div>
     <section class="relative z-10">
       <div class="container mx-auto px-4 max-w-7xl">
         <!-- Header -->
@@ -12,15 +16,15 @@
             My Projects
           </h2>
           <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            A collection of projects displayed as polaroids, showcasing my work
-            in web apps and games with a nostalgic twist.
+            A selection of projects highlighting my work in web development and
+            design.
           </p>
         </div>
 
         <!-- Projects Grid -->
         <div
           dir="ltr"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-16 justify-items-center bg-white/10 backdrop-blur-sm rounded-lg p-6"
         >
           <div
             v-for="(project, index) in projects"
@@ -40,7 +44,7 @@
                   <img
                     :src="project.image"
                     :alt="project.title"
-                    class="object-cover w-full h-full rounded"
+                    class="object-contain w-full h-full rounded"
                   />
                 </div>
                 <!-- Name and Short Description -->
@@ -63,44 +67,40 @@
 
               <!-- Back Face -->
               <div
-                class="flip-card-back bg-gradient-to-br from-gray-100 to-slate-200 text-slate-800 rounded-lg p-4 flex flex-col justify-between"
+                class="flip-card-back bg-gradient-to-br from-gray-100 to-slate-200 text-slate-800 rounded-lg p-6 flex flex-col justify-center items-center"
               >
-                <div>
-                  <h3 class="text-xl font-bold mb-3">
-                    {{ project.title }}
-                  </h3>
-                  <p class="text-lg mb-4 line-clamp-4">
-                    {{ project.description }}
-                  </p>
-                  <!-- <ul class="text-sm space-y-2">
-                    <li v-for="feature in project.features" :key="feature.label">
-                      <span class="font-semibold">{{ feature.label }}:</span> {{ feature.value }}
-                    </li>
-                  </ul> -->
-                </div>
-                <!-- Learn More Button -->
-                <div class="mt-auto flex justify-center">
-                  <NuxtLink
-                    :to="project.link"
-                    class="inline-flex items-center text-slate-800 font-semibold bg-pink-300 hover:bg-pink-400 px-6 py-2 rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]"
-                    :aria-label="'Learn more about ' + project.title"
+                <h3 class="text-xl font-bold mb-2">
+                  {{ project.title }}
+                </h3>
+                <p class="text-base mb-4 text-center">
+                  {{ project.description }}
+                </p>
+                <!-- <ul class="text-sm space-y-1 mb-4 text-center">
+                  <li v-for="feature in project.features" :key="feature.label">
+                    <span class="font-semibold">{{ feature.label }}:</span>
+                    {{ feature.value }}
+                  </li>
+                </ul> -->
+                <NuxtLink
+                  :to="project.link"
+                  class="inline-flex items-center text-slate-800 font-semibold bg-pink-300 hover:bg-pink-400 px-6 py-2 rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                  :aria-label="'View project ' + project.title"
+                >
+                  View Project
+                  <svg
+                    class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    viewBox="0 0 24 24"
                   >
-                    Learn More
-                    <svg
-                      class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </NuxtLink>
-                </div>
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -273,7 +273,7 @@ const projects = ref([
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
@@ -282,7 +282,7 @@ const projects = ref([
 }
 
 .flip-card-back {
-  background-color: transparent; /* Handled by Tailwind gradient */
+  background-color: transparent;
   transform: rotateY(180deg);
 }
 
