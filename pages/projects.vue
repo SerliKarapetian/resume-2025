@@ -2,109 +2,106 @@
   <div
     class="min-h-screen bg-gradient-to-br from-sky-950 via-sky-900 to-sky-800 text-gray-800 p-6 lg:p-10 font-[Georgia,serif]"
   >
-    <section>
+    <section class="relative z-10">
       <div class="container mx-auto px-4 max-w-7xl">
+        <!-- Header -->
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 text-gray-200">My Projects</h2>
-          <p class="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
-            A showcase of projects I’ve built to enhance my skills and explore
-            innovative solutions.
+          <h2
+            class="text-4xl font-extrabold mb-4 text-gray-100 drop-shadow-md animate-bounce-in"
+          >
+            My Projects
+          </h2>
+          <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            A collection of projects displayed as polaroids, showcasing my work
+            in web apps and games with a nostalgic twist.
           </p>
         </div>
 
         <!-- Projects Grid -->
         <div
           dir="ltr"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 justify-items-center"
         >
           <div
             v-for="(project, index) in projects"
             :key="index"
-            class="group relative bg-gray-50 rounded-3xl p-5 md:p-6 shadow-md hover:shadow-lg transition-all duration-500 border border-gradient-to-r from-blue-200 to-indigo-200 hover:scale-105 animate-fade-in"
+            class="flip-card relative animate-polaroid"
           >
-            <!-- Always visible content -->
-            <div class="h-full flex flex-col">
-              <!-- Category Badge -->
+            <!-- Polaroid Frame -->
+            <div class="flip-card-inner">
+              <!-- Front Face -->
               <div
-                class="absolute top-4 left-4 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
+                class="flip-card-front bg-white p-4 pb-10 rounded-md shadow-2xl border-2 border-gray-300"
               >
-                {{ project.category }}
-              </div>
-              <!-- Image section -->
-              <div class="relative z-10 flex justify-center h-24 mb-4">
+                <!-- Photo Area -->
                 <div
-                  class="w-24 h-24 flex items-center justify-center group-hover:scale-110 transition-all duration-400"
+                  class="w-[260px] h-[260px] flex items-center justify-center shadow-md bg-gradient-to-br from-gray-50 to-gray-100 mx-auto"
                 >
                   <img
                     :src="project.image"
                     :alt="project.title"
-                    class="object-contain w-full h-full"
+                    class="object-cover w-full h-full rounded"
                   />
+                </div>
+                <!-- Name and Short Description -->
+                <div class="mt-4 text-center space-y-2">
+                  <h3
+                    class="text-xl font-semibold text-gray-900 flex items-center justify-center"
+                  >
+                    {{ project.title }}
+                    <!-- <span
+                      class="ml-2 text-xs bg-blue-500 text-white px-2 py-1 rounded-full"
+                    >
+                      {{ project.category }}
+                    </span> -->
+                  </h3>
+                  <p class="text-base text-gray-700 font-medium">
+                    {{ project.shortDescription }}
+                  </p>
                 </div>
               </div>
 
-              <!-- Content column -->
-              <div class="flex-grow min-w-0">
-                <h3 class="text-xl font-semibold text-gray-800 mb-3">
-                  {{ project.title }}
-                </h3>
-                <p class="text-base text-gray-600 mb-6 leading-relaxed">
-                  {{ project.shortDescription }}
-                </p>
-              </div>
-            </div>
-
-            <!-- Desktop Hover Content -->
-            <div
-              class="absolute inset-0 rounded-3xl p-5 md:p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-md"
-              :style="`background-color: ${project.bgColor}`"
-            >
-              <div class="grid gap-4 h-full">
-                <!-- Empty space to align with visible content -->
-                <div class="h-24"></div>
-                <!-- Content column -->
-                <div class="overflow-y-auto pr-2">
-                  <h3 class="text-lg font-bold text-white mb-4">
+              <!-- Back Face -->
+              <div
+                class="flip-card-back bg-gradient-to-br from-gray-100 to-slate-200 text-slate-800 rounded-lg p-4 flex flex-col justify-between"
+              >
+                <div>
+                  <h3 class="text-xl font-bold mb-3">
                     {{ project.title }}
                   </h3>
-                  <p class="text-white text-sm mb-2 line-clamp-3">
+                  <p class="text-lg mb-4 line-clamp-4">
                     {{ project.description }}
                   </p>
-                  <!-- <ul class="text-white text-sm space-y-2">
+                  <!-- <ul class="text-sm space-y-2">
                     <li v-for="feature in project.features" :key="feature.label">
                       <span class="font-semibold">{{ feature.label }}:</span> {{ feature.value }}
                     </li>
                   </ul> -->
                 </div>
+                <!-- Learn More Button -->
+                <div class="mt-auto flex justify-center">
+                  <NuxtLink
+                    :to="project.link"
+                    class="inline-flex items-center text-slate-800 font-semibold bg-pink-300 hover:bg-pink-400 px-6 py-2 rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+                    :aria-label="'Learn more about ' + project.title"
+                  >
+                    Learn More
+                    <svg
+                      class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </NuxtLink>
+                </div>
               </div>
-            </div>
-
-            <!-- Learn More Link -->
-            <div class="mt-auto flex justify-end">
-              <NuxtLink
-                :to="project.link"
-                class="inline-flex items-center text-blue-600 font-semibold transition-colors duration-300 group-hover:text-white mb-2"
-                :aria-label="'Learn more about ' + project.title"
-              >
-                <svg
-                  class="w-5 h-5 mr-2 transition-transform duration-300 group-hover:translate-x-1 stroke-blue-600 group-hover:stroke-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-                <span class="cursor-pointer relative">
-                  Learn More
-                  <span
-                    class="absolute bottom-0 right-0 w-0 h-0.5 bg-white transition-all duration-500 group-hover:w-full"
-                  ></span>
-                </span>
-              </NuxtLink>
             </div>
           </div>
         </div>
@@ -114,134 +111,218 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
+// Project data
 const projects = ref([
   {
     title: "Todo List",
-    image: "/logo/logo.png",
-    shortDescription: "A simple app to manage tasks and stay organized.",
+    image: "/images/todolist.png",
+    shortDescription: "A sleek app to manage tasks and boost productivity.",
     description:
       "A web-based todo list application built to practice state management and responsive design, allowing users to create, edit, and delete tasks with ease.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-tasks",
+    bgColor: "#0d141e",
     link: "/pages/todolist",
   },
   {
     title: "Tic Tac Toe",
-    image: "/logo/logo.png",
-    shortDescription: "A classic two-player game with a modern UI.",
+    image: "/images/tictactoe.png",
+    shortDescription: "A fun two-player game with a vibrant UI.",
     description:
       "A web-based Tic Tac Toe game developed to practice JavaScript logic and CSS animations, featuring a clean interface and responsive design.",
     category: "Game",
+    icon: "fas fa-gamepad",
     bgColor: "#2e475d",
     link: "/pages/tictactoe",
   },
   {
     title: "Rock Paper Scissors",
-    image: "/logo/logo.png",
-    shortDescription: "A fun game to test your luck and strategy.",
+    image: "/images/rps.png",
+    shortDescription: "A playful game to test luck and strategy.",
     description:
       "An interactive Rock Paper Scissors game built to enhance JavaScript skills, with animated transitions and a mobile-friendly layout.",
     category: "Game",
-    bgColor: "#2e475d",
+    icon: "fas fa-hand-rock",
+    bgColor: "#2a9044",
     link: "/pages/rockpaperscissors",
   },
   {
     title: "8-Ball",
-    image: "/logo/logo.png",
-    shortDescription: "A magic 8-ball app for fun predictions.",
+    image: "/images/8ball.png",
+    shortDescription: "A magic 8-ball for fun predictions.",
     description:
       "A digital Magic 8-Ball application created to practice random response generation and playful UI design, with smooth animations.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-magic",
+    bgColor: "#34578e",
     link: "/pages/8ball",
   },
   {
     title: "Cat Photo Gallery",
-    image: "/logo/logo.png",
-    shortDescription: "A gallery app to display cat photos.",
+    image: "/images/cat.png",
+    shortDescription: "A gallery showcasing adorable cat photos.",
     description:
       "A photo gallery application showcasing cat images, built to practice API integration and grid layouts with Tailwind CSS.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-cat",
+    bgColor: "#ed1c24",
     link: "/pages/catphoto",
   },
   {
     title: "Sticky Notes",
-    image: "/logo/logo.png",
-    shortDescription: "A digital sticky notes app for quick memos.",
+    image: "/images/stickynotes.png",
+    shortDescription: "A colorful app for quick memos.",
     description:
-      "A sticky notes application designed to practice drag-and-drop functionality and local storage, with a colorful and intuitive interface.",
+      "A sticky notes application designed to practice drag-and-drop functionality and local storage, with a vibrant and intuitive interface.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-sticky-note",
+    bgColor: "#e5af38",
     link: "/pages/stickynotes",
   },
   {
-    title: "Tattoo Shop Landing Page",
-    image: "/logo/logo.png",
-    shortDescription: "A stylish landing page for a tattoo shop.",
+    title: "Tattoo Shop website",
+    image: "/images/shop-website.png",
+    shortDescription: "A bold landing page for a tattoo shop.",
     description:
       "A responsive landing page for a tattoo shop, built to practice modern web design principles and Tailwind CSS for styling.",
     category: "Website",
-    bgColor: "#2e475d",
+    icon: "fas fa-tattoo-machine",
+    bgColor: "#e75027",
     link: "/pages/tattooshop",
   },
   {
     title: "Quote Generator",
-    image: "/logo/logo.png",
-    shortDescription: "An app to generate inspirational quotes.",
+    image: "/images/quote.png",
+    shortDescription: "Inspirational quotes at your fingertips.",
     description:
       "A quote generator application that fetches random quotes via an API, designed to practice asynchronous JavaScript and UI design.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-quote-left",
+    bgColor: "#9e3494",
     link: "/pages/quotegenerator",
   },
   {
     title: "Pomodoro Timer",
-    image: "/logo/logo.png",
-    shortDescription: "A productivity timer for focused work sessions.",
+    image: "/images/promodo-timer.png",
+    shortDescription: "A timer for focused work sessions.",
     description:
       "A Pomodoro timer application built to practice JavaScript timers and state management, with a clean and distraction-free design.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-clock",
+    bgColor: "#219dd7",
     link: "/pages/pomodoro",
   },
   {
     title: "Expense Tracker",
-    image: "/logo/logo.png",
-    shortDescription: "An app to track personal expenses.",
+    image: "/images/piggy-bank.png",
+    shortDescription: "Track your expenses with ease.",
     description:
       "A personal expense tracker built to practice data visualization and local storage, featuring charts and a user-friendly interface.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-wallet",
+    bgColor: "#ffcb2d",
     link: "/pages/expensetracker",
   },
   {
     title: "Music Playlist App",
-    image: "/logo/logo.png",
-    shortDescription: "A web app to create and manage music playlists.",
+    image: "/images/music-playlist-app.png",
+    shortDescription: "Create and manage music playlists.",
     description:
       "A music playlist application designed to practice dynamic list rendering and API integration, with a sleek and modern UI.",
     category: "Web App",
-    bgColor: "#2e475d",
+    icon: "fas fa-music",
+    bgColor: "#000000",
     link: "/pages/musicplaylist",
   },
 ]);
 </script>
 
-<style>
-/* Custom animation for card fade-in */
-@keyframes fadeIn {
-  from {
+<style scoped>
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Flip card styles */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #fff;
+}
+
+.flip-card-back {
+  background-color: transparent; /* Handled by Tailwind gradient */
+  transform: rotateY(180deg);
+}
+
+/* Polaroid animation */
+@keyframes polaroidFade {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px) scale(0.9);
   }
-  to {
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+.animate-polaroid {
+  animation: polaroidFade 0.8s ease-out forwards;
+}
+
+/* Title animation */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 1s ease-out;
+}
+
+/* Custom cursor */
+.flip-card:hover {
+  cursor: pointer;
 }
 </style>
