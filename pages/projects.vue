@@ -69,12 +69,10 @@
               <div
                 class="flip-card-back bg-gradient-to-br from-gray-100 to-slate-200 text-slate-800 rounded-lg p-6 flex flex-col justify-center items-center"
               >
-                <h3 class="text-xl font-bold mb-2">
+                <!-- <h3 class="text-xl font-bold mb-2">
                   {{ project.title }}
-                </h3>
-                <p class="text-base mb-4 text-center">
-                  {{ project.description }}
-                </p>
+                </h3> -->
+                <p class="text-base mb-4 text-center" v-html="project.description"></p>
                 <!-- <ul class="text-sm space-y-1 mb-4 text-center">
                   <li v-for="feature in project.features" :key="feature.label">
                     <span class="font-semibold">{{ feature.label }}:</span>
@@ -120,7 +118,7 @@ const projects = ref([
     image: "/images/todolist.png",
     shortDescription: "A sleek app to manage tasks and boost productivity.",
     description:
-      "A web-based todo list application built to practice state management and responsive design, allowing users to create, edit, and delete tasks with ease.",
+      "A web-based <strong>todo list</strong> application built to practice state management and responsive design, allowing users to create, edit, and delete tasks with ease.",
     category: "Web App",
     icon: "fas fa-tasks",
     bgColor: "#0d141e",
@@ -131,7 +129,7 @@ const projects = ref([
     image: "/images/tictactoe.png",
     shortDescription: "A fun two-player game with a vibrant UI.",
     description:
-      "A web-based Tic Tac Toe game developed to practice JavaScript logic and CSS animations, featuring a clean interface and responsive design.",
+      "A web-based <strong>Tic Tac Toe</strong> game developed to practice JavaScript logic and CSS animations, featuring a clean interface and responsive design.",
     category: "Game",
     icon: "fas fa-gamepad",
     bgColor: "#2e475d",
@@ -142,7 +140,7 @@ const projects = ref([
     image: "/images/rps.png",
     shortDescription: "A playful game to test luck and strategy.",
     description:
-      "An interactive Rock Paper Scissors game built to enhance JavaScript skills, with animated transitions and a mobile-friendly layout.",
+      "An <strong>interactive Rock Paper Scissors game</strong> built to enhance JavaScript skills, with animated transitions and a mobile-friendly layout.",
     category: "Game",
     icon: "fas fa-hand-rock",
     bgColor: "#2a9044",
@@ -153,7 +151,7 @@ const projects = ref([
     image: "/images/8ball.png",
     shortDescription: "A magic 8-ball for fun predictions.",
     description:
-      "A digital Magic 8-Ball application created to practice random response generation and playful UI design, with smooth animations.",
+      "A <strong>digital Magic 8-Ball</strong> application created to practice random response generation and playful UI design, with smooth animations.",
     category: "Web App",
     icon: "fas fa-magic",
     bgColor: "#34578e",
@@ -164,7 +162,7 @@ const projects = ref([
     image: "/images/cat.png",
     shortDescription: "A gallery showcasing adorable cat photos.",
     description:
-      "A photo gallery application showcasing cat images, built to practice API integration and grid layouts with Tailwind CSS.",
+      "A <strong>photo gallery</strong> application showcasing cat images, built to practice API integration and grid layouts with Tailwind CSS.",
     category: "Web App",
     icon: "fas fa-cat",
     bgColor: "#ed1c24",
@@ -175,7 +173,7 @@ const projects = ref([
     image: "/images/stickynotes.png",
     shortDescription: "A colorful app for quick memos.",
     description:
-      "A sticky notes application designed to practice drag-and-drop functionality and local storage, with a vibrant and intuitive interface.",
+      "A <strong>sticky notes</strong> application designed to practice drag-and-drop functionality and local storage, with a vibrant and intuitive interface.",
     category: "Web App",
     icon: "fas fa-sticky-note",
     bgColor: "#e5af38",
@@ -186,7 +184,7 @@ const projects = ref([
     image: "/images/shop-website.png",
     shortDescription: "A bold landing page for a tattoo shop.",
     description:
-      "A responsive landing page for a tattoo shop, built to practice modern web design principles and Tailwind CSS for styling.",
+      "A <strong>responsive landing page</strong> for a tattoo shop, built to practice modern web design principles and Tailwind CSS for styling.",
     category: "Website",
     icon: "fas fa-tattoo-machine",
     bgColor: "#e75027",
@@ -197,7 +195,7 @@ const projects = ref([
     image: "/images/quote.png",
     shortDescription: "Inspirational quotes at your fingertips.",
     description:
-      "A quote generator application that fetches random quotes via an API, designed to practice asynchronous JavaScript and UI design.",
+      "A <strong>quote generator</strong> application that fetches random quotes via an API, designed to practice asynchronous JavaScript and UI design.",
     category: "Web App",
     icon: "fas fa-quote-left",
     bgColor: "#9e3494",
@@ -208,7 +206,7 @@ const projects = ref([
     image: "/images/promodo-timer.png",
     shortDescription: "A timer for focused work sessions.",
     description:
-      "A Pomodoro timer application built to practice JavaScript timers and state management, with a clean and distraction-free design.",
+      "A <strong>Pomodoro timer</strong> application built to practice JavaScript timers and state management, with a clean and distraction-free design.",
     category: "Web App",
     icon: "fas fa-clock",
     bgColor: "#219dd7",
@@ -219,7 +217,7 @@ const projects = ref([
     image: "/images/piggy-bank.png",
     shortDescription: "Track your expenses with ease.",
     description:
-      "A personal expense tracker built to practice data visualization and local storage, featuring charts and a user-friendly interface.",
+      "A personal <strong>expense tracker</strong> built to practice data visualization and local storage, featuring charts and a user-friendly interface.",
     category: "Web App",
     icon: "fas fa-wallet",
     bgColor: "#ffcb2d",
@@ -230,7 +228,7 @@ const projects = ref([
     image: "/images/music-playlist-app.png",
     shortDescription: "Create and manage music playlists.",
     description:
-      "A music playlist application designed to practice dynamic list rendering and API integration, with a sleek and modern UI.",
+      "A <strong>music playlist</strong> application designed to practice dynamic list rendering and API integration, with a sleek and modern UI.",
     category: "Web App",
     icon: "fas fa-music",
     bgColor: "#000000",
@@ -285,6 +283,11 @@ const projects = ref([
   background-color: transparent;
   transform: rotateY(180deg);
 }
+
+/* .flip-card-back p strong {
+  font-weight: 700;
+  color: inherit;
+} */
 
 /* Polaroid animation */
 @keyframes polaroidFade {
