@@ -29,13 +29,15 @@
           <div
             v-for="(project, index) in projects"
             :key="index"
-            class="flip-card relative animate-polaroid"
+            class="flip-card relative animate-polaroid bg-transparent w-[300px] h-[370px] hover:cursor-pointer"
           >
             <!-- Polaroid Frame -->
-            <div class="flip-card-inner">
+            <div
+              class="flip-card-inner relative w-full h-full text-center transition-transform duration-800"
+            >
               <!-- Front Face -->
               <div
-                class="flip-card-front bg-white p-4 pb-10 rounded-md shadow-2xl border-2 border-gray-300"
+                class="flip-card-front absolute w-full h-full bg-gradient-to-br from-white to-gray-100 text-slate-800 p-4 rounded-md shadow-2xl border-2 border-gray-300"
               >
                 <!-- Photo Area -->
                 <div
@@ -48,32 +50,32 @@
                   />
                 </div>
                 <!-- Name and Short Description -->
-                <div class="mt-4 text-center space-y-2">
+                <div class="mt-6 text-center">
                   <h3
-                    class="text-xl font-semibold text-gray-900 flex items-center justify-center"
+                    class="text-2xl font-semibold text-gray-900 flex items-center justify-center font-caveat"
                   >
                     {{ project.title }}
                     <!-- <span
-                      class="ml-2 text-xs bg-blue-500 text-white px-2 py-1 rounded-full"
+                      class="ml-2 text-xs bg-amber-600 text-white px-2 py-1 rounded-full font-caveat"
                     >
                       {{ project.category }}
                     </span> -->
                   </h3>
-                  <p class="text-base text-gray-700 font-medium">
+                  <!-- <p class="text-xl text-gray-700 font-medium font-caveat">
                     {{ project.shortDescription }}
-                  </p>
+                  </p> -->
                 </div>
               </div>
 
               <!-- Back Face -->
               <div
-                class="flip-card-back bg-gradient-to-br from-gray-100 to-slate-200 text-slate-800 rounded-lg p-6 flex flex-col justify-center items-center"
+                class="flip-card-back absolute w-full h-full bg-gradient-to-br from-white to-gray-100 text-slate-800 rounded-md p-6 flex flex-col justify-center items-center"
               >
-                <!-- <h3 class="text-xl font-bold mb-2">
+                <!-- <h3 class="text-2xl font-bold mb-2 font-caveat">
                   {{ project.title }}
                 </h3> -->
                 <p
-                  class="text-base mb-4 text-center"
+                  class="text-2xl mb-4 text-center font-caveat"
                   v-html="project.description"
                 ></p>
                 <!-- <ul class="text-sm space-y-1 mb-4 text-center">
@@ -219,27 +221,24 @@ const projects = ref([
 </script>
 
 <style scoped>
-/* Font import */
+/* Font imports */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap");
 
 .font-poppins {
   font-family: "Poppins", sans-serif;
 }
 
+.font-caveat {
+  font-family: "Caveat", cursive;
+}
+
 /* Flip card styles */
 .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 400px;
   perspective: 1000px;
 }
 
 .flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
   transform-style: preserve-3d;
 }
 
@@ -249,25 +248,18 @@ const projects = ref([
 
 .flip-card-front,
 .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-.flip-card-front {
-  background-color: #fff;
-}
-
 .flip-card-back {
-  background-color: transparent;
   transform: rotateY(180deg);
 }
 
 /* .flip-card-back p strong {
   font-weight: 700;
-    color: inherit;
+  font-family: "Caveat", cursive;
+  color: inherit;
 } */
 
 /* Polaroid animation */
@@ -303,10 +295,5 @@ const projects = ref([
 
 .animate-bounce-in {
   animation: bounceIn 1s ease-out;
-}
-
-/* Custom cursor */
-.flip-card:hover {
-  cursor: pointer;
 }
 </style>
