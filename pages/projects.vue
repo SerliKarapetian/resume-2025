@@ -86,7 +86,7 @@
                 </ul> -->
                 <NuxtLink
                   :to="project.link"
-                  class="group inline-flex items-center text-amber-800 font-semibold bg-amber-50 hover:bg-amber-100 px-6 py-2 rounded-md border-2 transition-all duration-300 hover:shadow-md hover:scale-105 font-caveat text-xl tracking-tight"
+                  class="group inline-flex items-center text-pink-800 font-semibold bg-pink-200 hover:bg-pink-300 px-6 py-2 rounded-md border-2 transition-all duration-300 hover:shadow-md hover:scale-105 font-caveat text-xl tracking-tight"
                   :aria-label="'View project ' + project.title"
                 >
                   View Project
@@ -100,7 +100,6 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="2"
-                      stroke-dasharray="3 3"
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
